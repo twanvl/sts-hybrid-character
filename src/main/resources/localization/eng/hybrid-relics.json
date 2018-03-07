@@ -1,0 +1,16 @@
+{
+  "Burning Snake Ring": {
+    "NAME": "Ring of the Burning Snake",
+    "FLAVOR": "Made from a fossilized snake, that was set on fire.",
+    "DESCRIPTIONS": [
+    "At the start of each combat, draw an additional card. At the end of combat, heal #b"," HP."
+    ]
+  },
+  "Blackend Snake Ring": {
+    "NAME": "Charred Snake Ring",
+    "FLAVOR": "A snake ring that has been deep fried, making it extra tasty.",
+    "DESCRIPTIONS": [
+    "Replaces #gRing #gof #gthe #Burning #gSnake. At the start of each combat, draw #b"," additional card. At the end of combat, heal #b"," HP."
+    ]
+  }
+}
