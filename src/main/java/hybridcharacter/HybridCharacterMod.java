@@ -6,14 +6,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.core.Settings;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.interfaces.*;
 
 import hybridcharacter.characters.HybridCharacter;
-import hybridcharacter.patches.Enums;
+import hybridcharacter.patches.PlayerClassEnum;
+import hybridcharacter.patches.CardColorEnum;
 import hybridcharacter.relics.*;
 
 @SpireInitializer
@@ -24,7 +24,7 @@ public class HybridCharacterMod implements
         EditStringsSubscriber {
     public static final String MODNAME = "Hybrid Character";
     public static final String AUTHOR = "twanvl";
-    public static final String DESCRIPTION = "v0.1.0\nAdds a ironclad-silent hybrid character with a combined card pool.";
+    public static final String DESCRIPTION = "v0.1.0\nAdds an Ironclad/Silent hybrid character with a combined card pool.";
 
     // card trail effect
     private static final Color RED_GREEN = new Color(0.7f, 0.7f, 0.1f, 1.0f);
@@ -32,10 +32,10 @@ public class HybridCharacterMod implements
 
     public HybridCharacterMod() {
         BaseMod.subscribeToPostInitialize(this);
-        //BaseMod.subscribeToEditCharacters(this);
-        //BaseMod.subscribeToEditStrings(this);
-        //BaseMod.subscribeToEditRelics(this);
-        //receiveEditColors();
+        BaseMod.subscribeToEditCharacters(this);
+        BaseMod.subscribeToEditStrings(this);
+        BaseMod.subscribeToEditRelics(this);
+        receiveEditColors();
     }
 
     public static void initialize() {
@@ -53,7 +53,7 @@ public class HybridCharacterMod implements
 
     public void receiveEditColors() {
         BaseMod.addColor(
-            Enums.HYBRID_COLOR.toString(),
+            CardColorEnum.HYBRID_COLOR.toString(),
             RED_GREEN, RED_GREEN, RED_GREEN, RED_GREEN, RED_GREEN, RED_GREEN, RED_GREEN,
             "images/cardui/512/bg_attack_hybrid.png",
             "images/cardui/512/bg_skill_hybrid.png",
@@ -71,24 +71,24 @@ public class HybridCharacterMod implements
             HybridCharacter.class,
             "The Hybrid",
             "Seeker class string",
-            Enums.HYBRID_COLOR.toString(),
+            CardColorEnum.HYBRID_COLOR.toString(),
             "The Hybrid",
             "images/charSelect/hybridButton.png",
             "images/charSelect/hybridPortrait.jpg",
-            Enums.HYBRID.toString());
+            PlayerClassEnum.HYBRID.toString());
     }
 
     @Override
     public void receiveEditRelics() {
-        BaseMod.addRelicToCustomPool(new BurningSnakeRing(), Enums.HYBRID_COLOR.toString());
-        BaseMod.addRelicToCustomPool(new BlackendSnakeRing(), Enums.HYBRID_COLOR.toString());
+        BaseMod.addRelicToCustomPool(new BurningSnakeRing(), CardColorEnum.HYBRID_COLOR.toString());
+        BaseMod.addRelicToCustomPool(new BlackendSnakeRing(), CardColorEnum.HYBRID_COLOR.toString());
         // TODO: also add red and green relics
     }
 
     @Override
     public void receiveEditStrings() {
-        // Note: naming the files localization/eng/relics.json crashes slay the spire on startup
-        loadCustomStringsFile(CharacterStrings.class, "localization/eng/hybrid-relics.json");
+        // Note: it seems that naming the files localization/eng/relics.json crashes slay the spire on startup
+        loadCustomStringsFile(RelicStrings.class, "localization/eng/hybrid-relics.json");
         loadCustomStringsFile(CharacterStrings.class, "localization/eng/hybrid-character.json");
     }
     public void loadCustomStringsFile(@SuppressWarnings("rawtypes") Class stringType, String file) {

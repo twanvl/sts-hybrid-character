@@ -7,16 +7,15 @@ import com.megacrit.cardcrawl.characters.Ironclad;
 import com.megacrit.cardcrawl.characters.TheSilent;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import basemod.abstracts.CustomPlayer;
 import java.util.ArrayList;
-import hybridcharacter.patches.Enums;
+import hybridcharacter.patches.PlayerClassEnum;
 
-//public class HybridCharacter extends CustomPlayer {
-public class HybridCharacter extends AbstractPlayer {
+public class HybridCharacter extends CustomPlayer {
+//public class HybridCharacter extends AbstractPlayer {
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("Hybrid");
     public static final String[] NAMES = characterStrings.NAMES;
     public static final String[] TEXT = characterStrings.TEXT;
@@ -26,9 +25,9 @@ public class HybridCharacter extends AbstractPlayer {
     public static final int START_GOLD = 99;
 
     public HybridCharacter(String name, AbstractPlayer.PlayerClass setClass) {
-        super(name, setClass);
-        this.dialogX = this.drawX + 0.0f * Settings.scale;
-        this.dialogY = this.drawY + 220.0f * Settings.scale;
+        super(name, setClass, null, null, null, null);
+        //this.dialogX = this.drawX + 0.0f * Settings.scale;
+        //this.dialogY = this.drawY + 220.0f * Settings.scale;
         this.initializeClass(null,
             "images/characters/hybrid/shoulder2.png",
             "images/characters/hybrid/shoulder.png",
@@ -64,7 +63,7 @@ public class HybridCharacter extends AbstractPlayer {
     }
 
     public static CharSelectInfo getLoadout() {
-        return new CharSelectInfo(NAMES[0], TEXT[0], START_HP, START_HP, START_GOLD, CARD_DRAW, Enums.HYBRID, getStartingRelics(), getStartingDeck(), false);
+        return new CharSelectInfo(NAMES[0], TEXT[0], START_HP, START_HP, START_GOLD, CARD_DRAW, PlayerClassEnum.HYBRID, getStartingRelics(), getStartingDeck(), false);
     }
 }
 
