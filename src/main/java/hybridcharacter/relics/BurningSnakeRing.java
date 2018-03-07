@@ -1,8 +1,6 @@
 package hybridcharacter.relics;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,7 +9,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import basemod.abstracts.CustomRelic;
 
 public class BurningSnakeRing extends CustomRelic {
-    public static final String ID = "Burning Ring Snake";
+    public static final String ID = "Burning Snake Ring";
     private static final int HEALTH_AMT = 3;
     private static final int NUM_CARDS = 1;
   

@@ -1,13 +1,10 @@
 package hybridcharacter.relics;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import basemod.abstracts.CustomRelic;
 
@@ -17,7 +14,7 @@ public class BlackendSnakeRing extends CustomRelic {
     private static final int NUM_CARDS = 2;
 
     public BlackendSnakeRing() {
-        super(ID, new Texture("images/relics/blackendSnakeRing.png"), AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
+        super(ID, new Texture("images/relics/blackendSnakeRing.png"), new Texture("images/relics/outline/blackendSnakeRing.png"), AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
     }
 
     @Override
