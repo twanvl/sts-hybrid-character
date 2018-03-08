@@ -10,7 +10,7 @@
     "NAME": "Charred Snake Ring",
     "FLAVOR": "A snake ring that has been deep fried, making it extra tasty.",
     "DESCRIPTIONS": [
-    "Replaces #gRing #gof #gthe #Burning #gSnake. At the start of each combat, draw #b"," additional card. At the end of combat, heal #b"," HP."
+    "Replaces #gRing #gof #gthe #gBurning #gSnake. At the start of each combat, draw #b"," additional card. At the end of combat, heal #b"," HP."
     ]
   }
 }
