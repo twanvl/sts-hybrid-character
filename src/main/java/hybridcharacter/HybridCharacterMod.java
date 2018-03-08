@@ -24,7 +24,7 @@ public class HybridCharacterMod implements
         EditStringsSubscriber {
     public static final String MODNAME = "Hybrid Character";
     public static final String AUTHOR = "twanvl";
-    public static final String DESCRIPTION = "v0.1.1\nAdds an Ironclad/Silent hybrid character with a combined card pool.";
+    public static final String DESCRIPTION = "v0.1.2\nAdds an Ironclad/Silent hybrid character with a combined card pool.";
 
     // card trail effect
     private static final Color RED_GREEN = new Color(0.7f, 0.7f, 0.1f, 1.0f);

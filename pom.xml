@@ -3,7 +3,7 @@
   
   <groupId>hybridcharacter</groupId>
   <artifactId>HybridCharacter</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.2</version>
   <packaging>jar</packaging>
 
     <name>HybridCharacter</name>
