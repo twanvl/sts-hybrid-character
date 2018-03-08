@@ -1,3 +1,6 @@
+# Generate recolored orb images
+
+# It would be nice if we could extract the originals from the jar, but for now, manually copy them to the red subfolder
 # Extract from jar file
 #jarfile=../../../../../../../../ModTheSpire/desktop-1.0.jar
 
@@ -13,11 +16,11 @@ use strict;
 for my $infile (glob "red/*.png") {
   my $outfile = $infile;
   $outfile =~ s{red/}{};
-  $infile =~ m{\d+} or die "no layer nr";
+  #$infile =~ m{\d+} or die "no layer nr";
   my $step = 0+$&;
-  my $fraction = ($step+2)/10;
-  my $lightness  = 100-8*$fraction;
-  my $saturation = 100-34*$fraction;
+  my $fraction = 0.5; #($step+2)/10;
+  my $lightness  = 100-8*$fraction*0;
+  my $saturation = 100-34*$fraction*0;
   my $hue        = 100+100*(110/180)*$fraction;
   print("$infile -> $outfile     ");
   print("$step/6=$fraction     ");

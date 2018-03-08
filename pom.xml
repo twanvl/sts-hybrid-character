@@ -59,6 +59,7 @@
 									<excludes>
 										<exclude>*.xcf</exclude>
 										<exclude>*.pl</exclude>
+										<exclude>images/characters/hybrid/orb/red</exclude>
 									</excludes>
 								</filter>
 							</filters>
