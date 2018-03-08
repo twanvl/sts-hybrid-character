@@ -16,7 +16,6 @@ public class InitializeCardPools {
 
     @SpireInsertPatch(rloc=26, localvars={"tmpPool"})
     public static void Insert(Object __obj_instance, Object tmpPoolObj) {
-        AbstractDungeon self = (AbstractDungeon)__obj_instance;
         @SuppressWarnings("unchecked")
         ArrayList<AbstractCard> tmpPool = (ArrayList<AbstractCard>) tmpPoolObj;
         if (AbstractDungeon.player.chosenClass == PlayerClassEnum.HYBRID) {
