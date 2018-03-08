@@ -1,7 +1,7 @@
 {
   "Burning Snake Ring": {
     "NAME": "Ring of the Burning Snake",
-    "FLAVOR": "Made from a fossilized snake, that was set on fire.",
+    "FLAVOR": "Made from a fossilized snake, that was set on fire. Why would anyone do that?",
     "DESCRIPTIONS": [
     "At the start of each combat, draw an additional card. At the end of combat, heal #b"," HP."
     ]
