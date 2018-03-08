@@ -16,9 +16,12 @@ import hybridcharacter.patches.PlayerClassEnum;
 
 public class HybridCharacter extends CustomPlayer {
 //public class HybridCharacter extends AbstractPlayer {
-    private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("Hybrid");
-    public static final String[] NAMES = characterStrings.NAMES;
-    public static final String[] TEXT = characterStrings.TEXT;
+    //private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("Hybrid");
+    //public static final String[] NAMES = characterStrings.NAMES;
+    //public static final String[] TEXT = characterStrings.TEXT;
+    // Note: Using getCharacterString here doesn't work, because they are loaded after character creation by basemod
+    public static final String[] NAMES = {"Hybrid."};
+    public static final String[] TEXT = {"An unholy amalgamation of Ironclad and Silent warriors."};
     public static final int START_HP = (Ironclad.START_HP + TheSilent.START_HP) / 2;
     public static final int CARD_DRAW = 5;
     public static final int ENERGY = 3;

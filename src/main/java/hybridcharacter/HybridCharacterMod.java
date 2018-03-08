@@ -32,8 +32,8 @@ public class HybridCharacterMod implements
 
     public HybridCharacterMod() {
         BaseMod.subscribeToPostInitialize(this);
-        BaseMod.subscribeToEditCharacters(this);
         BaseMod.subscribeToEditStrings(this);
+        BaseMod.subscribeToEditCharacters(this);
         BaseMod.subscribeToEditRelics(this);
         receiveEditColors();
     }
@@ -69,10 +69,10 @@ public class HybridCharacterMod implements
     public void receiveEditCharacters() {
         BaseMod.addCharacter(
             HybridCharacter.class,
-            "The Hybrid",
-            "Seeker class string",
+            "The Hybrid",//HybridCharacter.NAMES[1],
+            "Hybrid class string",
             CardColorEnum.HYBRID_COLOR.toString(),
-            "The Hybrid",
+            "Hybrid",//HybridCharacter.NAMES[0],
             "images/charSelect/hybridButton.png",
             "images/charSelect/hybridPortrait.jpg",
             PlayerClassEnum.HYBRID.toString());
