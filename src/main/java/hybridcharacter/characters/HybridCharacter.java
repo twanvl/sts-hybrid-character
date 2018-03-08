@@ -27,8 +27,22 @@ public class HybridCharacter extends CustomPlayer {
     public static final int ENERGY = 3;
     public static final int START_GOLD = 99;
 
+	public static final String[] orbTextures = {
+        "images/characters/hybrid/orb/layer1.png",
+        "images/characters/hybrid/orb/layer2.png",
+        "images/characters/hybrid/orb/layer3.png",
+        "images/characters/hybrid/orb/layer4.png",
+        "images/characters/hybrid/orb/layer5.png",
+        "images/characters/hybrid/orb/layer6.png",
+        "images/characters/hybrid/orb/layer1d.png",
+        "images/characters/hybrid/orb/layer2d.png",
+        "images/characters/hybrid/orb/layer3d.png",
+        "images/characters/hybrid/orb/layer4d.png",
+        "images/characters/hybrid/orb/layer5d.png",
+};
+
     public HybridCharacter(String name, AbstractPlayer.PlayerClass setClass) {
-        super(name, setClass, null, null, null, null);
+        super(name, setClass, orbTextures, "images/characters/hybrid/orb/vfx.png", null, null);
         //this.dialogX = this.drawX + 0.0f * Settings.scale;
         //this.dialogY = this.drawY + 220.0f * Settings.scale;
         this.initializeClass(null,

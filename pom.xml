@@ -58,6 +58,7 @@
 									<artifact>hybridcharacter:HybridCharacter</artifact>
 									<excludes>
 										<exclude>*.xcf</exclude>
+										<exclude>*.pl</exclude>
 									</excludes>
 								</filter>
 							</filters>
