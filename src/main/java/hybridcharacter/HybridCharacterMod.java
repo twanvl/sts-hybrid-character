@@ -10,6 +10,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.interfaces.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import hybridcharacter.characters.HybridCharacter;
 import hybridcharacter.patches.PlayerClassEnum;
@@ -30,7 +32,10 @@ public class HybridCharacterMod implements
     private static final Color RED_GREEN = new Color(0.7f, 0.7f, 0.1f, 1.0f);
     //private static final Color RED_GREEN = new Color(0.3f, 0.3f, 0.15f, 1.0f);
 
+	public static final Logger logger = LogManager.getLogger(BaseMod.class.getName());
+
     public HybridCharacterMod() {
+        logger.info("Initialize hybrid character mod.");
         BaseMod.subscribeToPostInitialize(this);
         BaseMod.subscribeToEditStrings(this);
         BaseMod.subscribeToEditCharacters(this);
