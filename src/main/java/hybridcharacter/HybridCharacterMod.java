@@ -87,7 +87,6 @@ public class HybridCharacterMod implements
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new BurningSnakeRing(), CardColorEnum.HYBRID_COLOR.toString());
         BaseMod.addRelicToCustomPool(new BlackendSnakeRing(), CardColorEnum.HYBRID_COLOR.toString());
-        // TODO: also add red and green relics
     }
 
     @Override
