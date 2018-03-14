@@ -17,7 +17,7 @@ import hybridcharacter.patches.PlayerClassEnum;
 
 // Add red and green relics to the Hybrid's relic library
 public class RelicLibraryPatches {
-	public static final Logger logger = LogManager.getLogger(BaseMod.class.getName());
+	public static final Logger logger = LogManager.getLogger(RelicLibraryPatches.class.getName());
 
     @SpirePatch(cls = "com.megacrit.cardcrawl.helpers.RelicLibrary", method = "addClassSpecificRelics")
     public static class RelicLibrary {
