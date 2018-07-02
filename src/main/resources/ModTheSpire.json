@@ -1,0 +1,10 @@
+{
+  "modid": "Hybrid Character",
+  "name": "Hybrid Character",
+  "author_list": ["twanvl"],
+  "description": "Adds an Ironclad/Silent hybrid character with a combined card pool.",
+  "version": "0.1.4",
+  "sts_version": "06-28-2018",
+  "mts_version": "2.6.0",
+  "update_json": "https://api.github.com/repos/twanvl/sts-hybrid-character/releases/latest"
+}

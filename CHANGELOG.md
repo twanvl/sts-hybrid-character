@@ -1,3 +1,6 @@
+0.1.4:
+  * Compatibility with recent versions of Slay the Spire (week 31)
+
 0.1.3:
   * Fix: upgrade strikes and defends in BackToBasics event
 

@@ -1,17 +1,17 @@
 package hybridcharacter.characters;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.characters.Ironclad;
 import com.megacrit.cardcrawl.characters.TheSilent;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
-import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+
 import basemod.abstracts.CustomPlayer;
-import java.util.ArrayList;
 import hybridcharacter.patches.PlayerClassEnum;
 
 public class HybridCharacter extends CustomPlayer {
@@ -26,6 +26,7 @@ public class HybridCharacter extends CustomPlayer {
     public static final int CARD_DRAW = 5;
     public static final int ENERGY = 3;
     public static final int START_GOLD = 99;
+    public static final int ORBS = 0;
 
 	public static final String[] orbTextures = {
         "images/characters/hybrid/orb/layer1.png",
@@ -42,7 +43,7 @@ public class HybridCharacter extends CustomPlayer {
 };
 
     public HybridCharacter(String name, AbstractPlayer.PlayerClass setClass) {
-        super(name, setClass, orbTextures, "images/characters/hybrid/orb/vfx.png", null, null);
+        super(name, setClass, orbTextures, "images/characters/hybrid/orb/vfx.png", (String)null, null);
         //this.dialogX = this.drawX + 0.0f * Settings.scale;
         //this.dialogY = this.drawY + 220.0f * Settings.scale;
         this.initializeClass(null,
@@ -80,7 +81,7 @@ public class HybridCharacter extends CustomPlayer {
     }
 
     public static CharSelectInfo getLoadout() {
-        return new CharSelectInfo(NAMES[0], TEXT[0], START_HP, START_HP, START_GOLD, CARD_DRAW, PlayerClassEnum.HYBRID, getStartingRelics(), getStartingDeck(), false);
+        return new CharSelectInfo(NAMES[0], TEXT[0], START_HP, START_HP, ORBS, START_GOLD, CARD_DRAW, PlayerClassEnum.HYBRID, getStartingRelics(), getStartingDeck(), false);
     }
 }
 

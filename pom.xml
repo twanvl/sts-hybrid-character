@@ -3,7 +3,7 @@
   
   <groupId>hybridcharacter</groupId>
   <artifactId>HybridCharacter</artifactId>
-  <version>0.1.3</version>
+  <version>0.1.4</version>
 
   <name>HybridCharacter</name>
   <description>Adds an Ironclad/Silent hybrid character</description>
