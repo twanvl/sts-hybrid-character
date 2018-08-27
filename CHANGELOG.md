@@ -1,3 +1,6 @@
+0.1.5:
+  * Compatibility with recent versions of ModTheSpire and BaseMod (v3.0.0)
+
 0.1.4:
   * Compatibility with recent versions of Slay the Spire (week 31)
 

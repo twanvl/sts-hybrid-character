@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import basemod.BaseMod;
+import basemod.ModLabel;
 import basemod.ModPanel;
 import basemod.interfaces.*;
 import org.apache.logging.log4j.LogManager;
@@ -26,7 +27,7 @@ public class HybridCharacterMod implements
         EditStringsSubscriber {
     public static final String MODNAME = "Hybrid Character";
     public static final String AUTHOR = "twanvl";
-    public static final String DESCRIPTION = "v0.1.4\nAdds an Ironclad/Silent hybrid character with a combined card pool.";
+    public static final String DESCRIPTION = "Adds an Ironclad/Silent hybrid character with a combined card pool.";
 
     // card trail effect
     private static final Color RED_GREEN = new Color(0.7f, 0.7f, 0.1f, 1.0f);
@@ -36,10 +37,7 @@ public class HybridCharacterMod implements
 
     public HybridCharacterMod() {
         logger.info("Initialize hybrid character mod.");
-        BaseMod.subscribeToPostInitialize(this);
-        BaseMod.subscribeToEditStrings(this);
-        BaseMod.subscribeToEditCharacters(this);
-        BaseMod.subscribeToEditRelics(this);
+        BaseMod.subscribe(this);
         receiveEditColors();
     }
 
@@ -52,13 +50,13 @@ public class HybridCharacterMod implements
         // Mod badge
         Texture badgeTexture = new Texture("images/HybridCharacterBadge.png");
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addLabel("This mod does not have any settings.", 400.0f, 700.0f, (me) -> {});
+        settingsPanel.addUIElement(new ModLabel("This mod does not have any settings.", 400.0f, 700.0f, settingsPanel, (me) -> {}));
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
     }
 
     public void receiveEditColors() {
         BaseMod.addColor(
-            CardColorEnum.HYBRID_COLOR.toString(),
+            CardColorEnum.HYBRID_COLOR,
             RED_GREEN, RED_GREEN, RED_GREEN, RED_GREEN, RED_GREEN, RED_GREEN, RED_GREEN,
             "images/cardui/512/bg_attack_hybrid.png",
             "images/cardui/512/bg_skill_hybrid.png",
@@ -76,17 +74,17 @@ public class HybridCharacterMod implements
             HybridCharacter.class,
             "The Hybrid",//HybridCharacter.NAMES[1],
             "Hybrid class string",
-            CardColorEnum.HYBRID_COLOR.toString(),
+            CardColorEnum.HYBRID_COLOR,
             "Hybrid",//HybridCharacter.NAMES[0],
             "images/charSelect/hybridButton.png",
             "images/charSelect/hybridPortrait.jpg",
-            PlayerClassEnum.HYBRID.toString());
+            PlayerClassEnum.HYBRID);
     }
 
     @Override
     public void receiveEditRelics() {
-        BaseMod.addRelicToCustomPool(new BurningSnakeRing(), CardColorEnum.HYBRID_COLOR.toString());
-        BaseMod.addRelicToCustomPool(new BlackendSnakeRing(), CardColorEnum.HYBRID_COLOR.toString());
+        BaseMod.addRelicToCustomPool(new BurningSnakeRing(), CardColorEnum.HYBRID_COLOR);
+        BaseMod.addRelicToCustomPool(new BlackendSnakeRing(), CardColorEnum.HYBRID_COLOR);
     }
 
     @Override

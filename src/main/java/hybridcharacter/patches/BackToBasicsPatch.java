@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
-@SpirePatch(cls = "com.megacrit.cardcrawl.events.thecity.BackToBasics", method = "buttonEffect")
+@SpirePatch(clz = com.megacrit.cardcrawl.events.city.BackToBasics.class, method = "buttonEffect")
 public class BackToBasicsPatch {
 
 	@SpireInsertPatch(rloc = 30)

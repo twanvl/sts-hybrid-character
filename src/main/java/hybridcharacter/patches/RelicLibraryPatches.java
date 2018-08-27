@@ -1,25 +1,25 @@
 package hybridcharacter.patches;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.megacrit.cardcrawl.core.Settings;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import basemod.BaseMod;
-import hybridcharacter.patches.PlayerClassEnum;
 
 // Add red and green relics to the Hybrid's relic library
 public class RelicLibraryPatches {
 	public static final Logger logger = LogManager.getLogger(RelicLibraryPatches.class.getName());
 
-    @SpirePatch(cls = "com.megacrit.cardcrawl.helpers.RelicLibrary", method = "addClassSpecificRelics")
+    @SpirePatch(clz=com.megacrit.cardcrawl.helpers.RelicLibrary.class, method = "addClassSpecificRelics")
     public static class RelicLibrary {
         @SpireInsertPatch(rloc=0, localvars={"redRelics","greenRelics"})
         public static void Insert(ArrayList<AbstractRelic> relicPool, Object _redRelics, Object _greenRelics) {
@@ -40,7 +40,7 @@ public class RelicLibraryPatches {
         }
     }
 
-    @SpirePatch(cls="com.megacrit.cardcrawl.helpers.RelicLibrary", method="populateRelicPool")
+    @SpirePatch(clz=com.megacrit.cardcrawl.helpers.RelicLibrary.class, method="populateRelicPool")
     public static class PopulateRelicPool {
         @SpireInsertPatch(rloc=0, localvars={"redRelics","greenRelics"})
         public static void Insert(ArrayList<String> pool, AbstractRelic.RelicTier tier, AbstractPlayer.PlayerClass chosenClass, Object _redRelics, Object _greenRelics) {
@@ -63,5 +63,5 @@ public class RelicLibraryPatches {
             }
         }
     }
-    
+
 }

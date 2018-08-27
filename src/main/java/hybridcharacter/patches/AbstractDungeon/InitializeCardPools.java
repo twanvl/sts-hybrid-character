@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import hybridcharacter.patches.PlayerClassEnum;
 
-@SpirePatch(cls="com.megacrit.cardcrawl.dungeons.AbstractDungeon", method="initializeCardPools")
+@SpirePatch(clz=com.megacrit.cardcrawl.dungeons.AbstractDungeon.class, method="initializeCardPools")
 public class InitializeCardPools {
 
     @SpireInsertPatch(rloc=26, localvars={"tmpPool"})
@@ -35,4 +35,3 @@ public class InitializeCardPools {
     }
 
 }
-
